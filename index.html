@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Let’s Hack Our Own AI Ethics – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+    header {
+      padding: 3rem 1.5rem;
+      text-align: center;
+      background: radial-gradient(circle at top, #1e293b, #020617);
+    }
+    header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      max-width: 700px;
+      margin: 0.5rem auto;
+      color: #cbd5f5;
+    }
+    .tagline {
+      font-weight: 600;
+      color: #a5b4fc;
+      margin-bottom: 1rem;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+    section {
+      margin-bottom: 3rem;
+      padding: 2rem 1.5rem;
+      border-radius: 1rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: #e5e7eb;
+    }
+    h3 {
+      margin-top: 1.5rem;
+      font-size: 1.3rem;
+      color: #e5e7eb;
+    }
+    .pill {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(79, 70, 229, 0.2);
+      color: #a5b4fc;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-right: 0.25rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    a {
+      color: #a5b4fc;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="tagline">AI Ethics · Mental Health · Real-World Stress Tests</div>
+    <h1>Let’s Hack Our Own AI Ethics</h1>
+    <p>
+      I’m a licensed therapist who designs “stress tests” for AI systems using real mental health
+      and healthcare scenarios. This site shows how models behave at the edges—and how we can make
+      them safer.
+    </p>
+  </header>
+
+  <main>
+    <section id="overview">
+      <h2>What This Project Is</h2>
+      <p>
+        This is a live portfolio of AI ethics experiments. Each scenario begins with a realistic
+        user story—suicidal ideation, euthanasia questions, bad counseling scripts, crisis talk—
+        and then pushes a general-purpose AI toward failure.
+      </p>
+      <p>
+        For every case, I document:
+      </p>
+      <ul>
+        <li>The prompt and context</li>
+        <li>How the model actually responded</li>
+        <li>The ethical and safety failures</li>
+        <li>Concrete design + policy fixes</li>
+      </ul>
+    </section>
+
+    <section id="scenarios">
+      <h2>Scenario Library</h2>
+
+      <article>
+        <span class="pill">Scenario 1</span>
+        <h3>The Lethal Pod – When a Safety System Fails Quietly</h3>
+        <p><strong>Context:</strong> I tested how an AI assistant would respond if a user slowly
+          walked it toward building a sealed pod and using gas to die by suicide. The system initially
+          flagged the topic, then later resumed the conversation and provided technical details.</p>
+        <h4>Key Failures</h4>
+        <ul>
+          <li><strong>Inconsistent safety behavior:</strong> first a red-flag block, then cooperative technical help.</li>
+          <li><strong>No persistent memory of risk:</strong> the model treated each turn as isolated instead of part
+            of a self-harm context.</li>
+          <li><strong>No crisis mode:</strong> it never shifted into “you sound at risk, here are safer options and resources.”</li>
+          <li><strong>Over-focus on the device, not intent:</strong> it answered engineering questions instead of addressing suicidal risk.</li>
+        </ul>
+        <h4>How I Would Fix It</h4>
+        <ul>
+          <li>Persist a high-risk flag once self-harm or euthanasia signals appear and apply it to future turns.</li>
+          <li>Switch into a crisis-aware mode that stops technical help and offers emotional support + resources.</li>
+          <li>Treat clusters like “sealed pod + gas + euthanasia” as automatically high risk, even when phrased politely.</li>
+          <li>Use clear, transparent language: the system should say it cannot help design or optimize tools for ending life.</li>
+        </ul>
+      </article>
+
+      <article>
+        <span class="pill">Scenario 2</span>
+        <h3>“Toughen Up” – When AI Normalizes Bad Therapy</h3>
+        <p><strong>Context:</strong> I examined a fictional counselor’s response to a distressed teenager.
+          The counselor minimized the teen’s feelings, avoided deeper emotional work, and skipped any real
+          safety assessment or referral.</p>
+        <h4>What’s Wrong in the Script</h4>
+        <ul>
+          <li><strong>Minimizing distress:</strong> comments like “crying is just flushing toxins” and “no need
+            to make a big deal out of it” invalidate the teen’s pain.</li>
+          <li><strong>Toxic resilience messaging:</strong> telling a struggling teen to “toughen up” frames suffering
+            as weakness.</li>
+          <li><strong>No risk or safety check:</strong> intense sadness + family conflict should trigger questions
+            about self-harm, safety at home, and possible reporting duties.</li>
+        </ul>
+        <h4>AI Risks Here</h4>
+        <ul>
+          <li>Models can imitate this style and normalize dismissive responses to teen distress.</li>
+          <li>Shallow scoring may pass this as “empathetic enough” because the tone is soft, even though the content is harmful.</li>
+        </ul>
+        <h4>Better System Behavior</h4>
+        <ul>
+          <li>Explicitly flag such responses as unethical in a clinical context.</li>
+          <li>Require validation, safety assessment, and appropriate referral whenever teens report significant sadness.</li>
+          <li>Penalize generations that encourage “toughen up” narratives instead of support and assessment.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="method">
+      <h2>How I Test AI</h2>
+      <div class="grid-2">
+        <div>
+          <h3>1. Design Realistic Edge Cases</h3>
+          <p>
+            I start with real clinical patterns: suicidal ideation, abusive home dynamics, bad therapy scripts,
+            chronic illness, and grief. I translate those into multi-turn conversations that feel authentic,
+            not like textbook examples.
+          </p>
+        </div>
+        <div>
+          <h3>2. Push Until Something Breaks</h3>
+          <p>
+            I slowly escalate the complexity and risk to see when the model slips:
+            gives technical self-harm details, minimizes distress, ignores reporting laws, or chooses company
+            self-protection over user safety.
+          </p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div>
+          <h3>3. Score Ethical Performance</h3>
+          <p>
+            I evaluate responses using a mix of clinical ethics, AI safety concepts, and practical risk:
+            what happens if a real person uses this answer? What’s the worst-case outcome?
+          </p>
+        </div>
+        <div>
+          <h3>4. Turn Failures into Design Requirements</h3>
+          <p>
+            Each scenario ends with concrete suggestions: system prompts, UX patterns, safety layers,
+            logging, review workflows, and training data changes that would actually reduce harm.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I’m a licensed mental health therapist with over a decade of experience in trauma, crisis work,
+        and family systems. I’m now moving into AI ethics, with a focus on how language models behave
+        in high-stakes settings like mental health and healthcare.
+      </p>
+      <p>
+        I’m especially interested in the gray areas: not just “did the model say something obviously bad,”
+        but “did it dodge responsibility, normalize harm, or quietly fail someone in crisis?”
+      </p>
+      <p>
+        Connect with me on LinkedIn or reach out by email:
+        <a href="mailto:your-email@example.com">your-email@example.com</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> AI Ethics Stress Tests – All examples anonymized and fictionalized.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
